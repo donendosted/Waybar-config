@@ -34,30 +34,67 @@ window#waybar.hidden {
     color: aliceblue;
 }
 
-#custom-spotify, #custom-spotify-prev, #custom-spotify-next  {
+#custom-spotify {
 	/* margin-left: 8px; */
 	padding-left: 10px;
     padding-right: 10px;
-    border-radius: 5px 20px 5px 20px;
-    border: solid 3px;
+    /* border-radius: 5px 20px 5px 20px; */
+    border-top: solid 3px;
+    border-bottom: solid 3px;
     border-color: #484a4a;
     transition: background 0.3s ease-in-out,
 	border-radius 0.3s ease-in-out;
     color: #ffffff;
     background: #0f1c17;
-}	
-
-#custom-spotify:hover {
-	border-radius: 20px 5px 20px 5px;
-	background: #484a4a;
 }
 
+#custom-spotify:hover {
+    background-color: #787a7a;
+}
+
+#custom-sprev  {
+	/* margin-left: 8px; */
+	padding-left: 10px;
+    padding-right: 10px;
+    /* border-radius: 5px 20px 5px 20px; */
+    border-radius: 20px 0px 0px 20px;
+    border: solid 3px;
+    border-right: 0px;
+    border-color: #484a4a;
+    transition: background 0.3s ease-in-out,
+	border-radius 0.3s ease-in-out;
+    color: #ffffff;
+    background: #0f1c17;
+}
+
+#custom-sprev:hover {
+    background-color: #787a7a;
+}
+
+#custom-snext  {
+	/* margin-left: 8px; */
+	padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 0px 20px 20px 0px;
+    border: solid 3px;
+    border-left: 0px;
+    border-color: #484a4a;
+    transition: background 0.3s ease-in-out,
+	border-radius 0.3s ease-in-out;
+    color: #ffffff;
+    background: #0f1c17;
+}
+
+#custom-snext:hover {
+    background-color: #787a7a;
+}
 
 #clock {
     padding-left: 16px;
     padding-right: 16px;
-    border-radius: 5px 5px 20px 20px;
+    /*border-radius: 5px 5px 5px 5px;*/
     border: solid 3px;
+    border-right: 0px;
     border-color: #484a4a;
     transition: background 0.3s ease,
 	border-radius 0.3s ease;
@@ -66,16 +103,16 @@ window#waybar.hidden {
 }
 
 #clock:hover {
-	border-radius: 20px 20px 5px 5px;
 	background: #484a4a;
 }
 
 #network {
-	margin-right: 8px;
+	/* margin-right: 8px; */
 	padding-right: 15px;
 	padding-left: 15px;
-	border-radius: 20px 5px 20px 5px;
+	border-radius: 20px 5px 5px 20px;
     border: solid 3px;
+    border-right: 0px;
     border-color: #484a4a;
     transition: background 0.3s ease,
 	border-radius 0.3s ease;
@@ -85,16 +122,16 @@ window#waybar.hidden {
 
 
 #network:hover {
-	border-radius: 5px 20px 5px 20px;
 	background: #484a4a;
 }
 
 #pulseaudio {
     /* margin-right: 8px; */
-    border-radius: 20px 5px 20px 5px;
+    /*border-radius: 5px 5px 5px 5px;*/
     padding-left: 0px;
     padding-right: 0px;
     border: solid 3px;
+    border-right: 0px;
     border-color: #484a4a;
     transition: background 0.3s ease,
 	border-radius 0.3s ease;
@@ -103,7 +140,6 @@ window#waybar.hidden {
 }
 
 #pulseaudio:hover {
-	border-radius: 5px 20px 5px 20px;
 	background: #484a4a;
 }
 
@@ -111,8 +147,9 @@ window#waybar.hidden {
     /* margin-right: 8px; */
     padding-left: 10px;
     padding-right: 10px;
-    border-radius: 20px 5px 20px 5px;
+    /*border-radius: 5px 5px 5px 5px;*/
     border: solid 3px;
+    border-right: 0px;
     border-color: #484a4a;
     transition: background 0.3s ease,
 	border-radius 0.3s ease;
@@ -121,7 +158,6 @@ window#waybar.hidden {
 }
 
 #backlight:hover {
-	border-radius: 5px 20px 5px 20px;
 	background: #484a4a;
 }
 
@@ -130,8 +166,9 @@ window#waybar.hidden {
     /* margin-right: 8px; */
     padding-left: 1px;
     padding-right: 1px;
-    border-radius: 20px 5px 20px 5px;
+    /*border-radius: 5px 5px 5px 5px;*/
     border: solid 3px;
+    border-right: 0px;
     border-color: #484a4a;
     transition: background 0.3s ease,
 	border-radius 0.3s ease;
@@ -140,7 +177,6 @@ window#waybar.hidden {
 }
 
 #battery:hover {
-	border-radius: 5px 20px 5px 20px;
 	background: #484a4a;
 }
 
@@ -151,6 +187,7 @@ window#waybar.hidden {
     /*background-color: #26A65B;*/
     background-color: #0f1c17;
     border: solid 3px;
+    border-right: 0px;
     border-color: #484a4a;
 }
 
@@ -176,21 +213,16 @@ window#waybar.hidden {
 }
 
 #tray {
-    padding-left: 16px;
-    padding-right: 16px;
-	margin-right: 8px;
-    border-radius: 20px 10px 10px 5px;
+    padding-left: 10px;
+    padding-right: 6px;
+	margin-right: 2px;
+    border-radius: 0px 10px 10px 0px;
     border: solid 3px;
     border-color: #484a4a;
     transition: background 0.3s ease,
 	border-radius 0.3s ease;
     color: #ffffff;
     background: #0f1c17;
-}
-
-#tray:hover {
-	border-radius: 5px 20px 5px 20px;
-	background: #484a4a;
 }
 
 @keyframes blink {

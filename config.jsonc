@@ -1,8 +1,8 @@
 {
     "position": "bottom",
     "modules-left": ["sway/workspaces", "sway/scratchpad", "sway/mode"],
-    "modules-center": ["custom/spotify-prev","custom/spotify","custom/spotify-next"],
-    "modules-right": ["clock","network","pulseaudio", "backlight", "battery", "tray"],
+    "modules-center": ["custom/sprev","custom/spotify","custom/snext"],
+    "modules-right": ["network","pulseaudio", "backlight", "battery","clock", "tray"],
 
 
     "sway/workspaces": {
@@ -27,24 +27,29 @@
         "format": "  {}",
         "interval": 1,
         "on-click": "playerctl play-pause",
-        "exec": "~/.config/waybar/scripts/spotify.sh"
+        "exec": "~/.config/waybar/scripts/spotify.sh",
+        "tooltip": "playerctl --player=spotify status"
     },
     
-    "custom/spotify-prev" : {
-        "format": "⏮",
-        "on-click":"playerctl previous",
-        "exec": "~/.config/waybar/scripts/spotify.sh prev"
+    "custom/sprev" : {
+      "format": "{}",
+        "interval": 1,
+        "on-click": "playerctl previous",
+        "exec": "~/.config/waybar/scripts/prev.sh"
     },
 
-    "custom/spotify-next" : {
-        "format": "⏭",
-        "on-click":"playerctl next",
-        "exec": "~/.config/waybar/scripts/spotify.sh next"
+    "custom/snext" : {
+        "format": "{}",
+        "interval": 1,
+        "on-click": "playerctl next",
+        "exec": "~/.config/waybar/scripts/next.sh"
     },
 
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%a | %d %b | %I:%M %p}"
+        "format": "{:%H:%M:%S}",
+        "format-alt": "{:%a %d %b}",
+        "interval":1
     },
 
 
@@ -92,8 +97,8 @@
     },
 
     "tray": {
-        "icon-size": 16,
-        "spacing": 4
+        "icon-size": 20,
+        "spacing": 5
     }
 
 }
