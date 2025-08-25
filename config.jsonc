@@ -1,0 +1,97 @@
+{
+    "position": "bottom",
+    "modules-left": ["sway/workspaces", "sway/scratchpad", "sway/mode"],
+    "modules-center": ["custom/spotify-prev","custom/spotify","custom/spotify-next"],
+    "modules-right": ["clock","network","pulseaudio", "backlight", "battery", "tray"],
+
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false
+    },
+
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+
+    "sway/mode": {
+        "format": "<i>{}</i>"
+    },
+
+    "custom/spotify": {
+        "format": "  {}",
+        "interval": 1,
+        "on-click": "~/.config/waybar/scripts/spotify.sh play-pause",
+        "exec": "~/.config/waybar/scripts/spotify.sh"
+    },
+    
+    "custom/spotify-prev" : {
+        "format": "⏮",
+        "on-click":"playerctl previous"
+    },
+
+    "custom/spotify-next" : {
+        "format": "⏭",
+        "on-click":"playerctl next"
+    },
+
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%a | %d %b | %I:%M %p}"
+    },
+
+
+    "network": {
+        "format-wifi": "  {essid} ({signalStrength}%)",
+        "format-ethernet": " Ethernet",
+        "format-disconnected": "⚠ Disconnected",
+        "on-click": "kitty nmtui"
+    },
+
+    "pulseaudio": {
+        "reverse-scrolling": true,
+        "format": "{format_source} {volume}% {icon}",
+        "format-bluetooth": "{format_source} {volume}% {icon} ",
+        "format-muted": "{format_source}  ",
+        "format-source": "",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "default": ["🕨", "🕩", "🕪"]
+        },
+        "on-click": "pavucontrol",
+        "min-length": 13
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": ["🌑","🌒","🌓","🌔", "🌕"],
+        "min-length": 5,
+        "exec": "~/.config/waybar/scripts/brightness.sh",
+        "on-click": "~/.config/waybar/scripts/brightness.sh"
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": " {capacity}% {icon} ",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        // "format-icons": ["▁", "▂", "▃", "▄", "▅"]
+        "format-icons": ["", "", "", "", ""]     
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 4
+    }
+
+}
